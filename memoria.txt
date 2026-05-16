@@ -1,0 +1,25 @@
+PASO 1
+*CREAMOS LARAVEL LA ESTRUCTURA CON EL COMANDO:
+composer create-project laravel/laravel ProtectoraAnimales "10.*"
+*PREPARAMOS ENTORNO
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=protectoraAnimales
+DB_USERNAME=root
+DB_PASSWORD=
+
+*creamos los modelos y tablas
+php artisan make:model Nombre -m
+
+*definimos relaciones en los modelos
+
+*rellenamos la base de datos con factory seeder y faker
+php artisan make:factory NombreFactory
+
+*seeder
+php artisan make:seeder NombreSeeer 
+creas suarios fijos y de prueba masivamente
+php artisan migrate:fresh --seed
+*
+

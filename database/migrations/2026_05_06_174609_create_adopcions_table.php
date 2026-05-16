@@ -1,0 +1,31 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('adopcions', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('animal_id')->unique()->constrained('animals')->onDelete('cascade');
+            $table->string('adoptante_nombre');
+            $table->date('fecha_adopcion');
+            $table->boolean('seguimiento')->default(false);
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('adopcions');
+    }
+};
