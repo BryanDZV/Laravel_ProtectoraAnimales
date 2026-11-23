@@ -38,7 +38,7 @@ class DatabaseSeeder extends Seeder
         User::create([
             'login' => 'cuidador1',
             'role' => 'cuidador',
-            'password' => Hash::make('cuidador123'),
+            'password' => Hash::make('cui123'),
             'name' => 'Cuidador User',
             'email' => 'cuidador1@example.com',
             'telefono' => '0987654321'

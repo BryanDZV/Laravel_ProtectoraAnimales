@@ -24,7 +24,7 @@ class LoginController extends Controller
 
         //autentica
 
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt(['login' => $credentials['login'], 'password' => $credentials['password']])) {
 
             $request->session()->regenerate();
             $user = Auth::user();
